@@ -5,7 +5,7 @@
   "description": "Read and manage your Kombine tasks, sessions, goals and stats through the API with a personal access token",
   "author": { "name": "Adam Świderski", "url": "https://kombine.dev" },
   "homepage": "https://kombine.dev",
-  "repository": "https://github.com/AdamCodingCorner/kombine-skills",
+  "repository": "https://github.com/asvid/kombine-skills",
   "license": "MIT",
   "keywords": ["kombine", "pomodoro", "tasks", "productivity"]
 }

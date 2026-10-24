@@ -23,15 +23,15 @@ Restart your agent so it picks up the variable. Don't paste the token into a cha
 **Claude Code** (plugin, updates with `/plugin marketplace update kombine`):
 
 ```
-/plugin marketplace add AdamCodingCorner/kombine-skills
+/plugin marketplace add asvid/kombine-skills
 /plugin install kombine@kombine
 ```
 
 **Any agent** ([skills CLI](https://github.com/vercel-labs/skills): Claude Code, Cursor, Codex, Copilot, …):
 
 ```bash
-npx skills add AdamCodingCorner/kombine-skills          # pick skills and agents interactively
-npx skills add AdamCodingCorner/kombine-skills -g -a claude-code   # all skills, globally, for Claude Code
+npx skills add asvid/kombine-skills          # pick skills and agents interactively
+npx skills add asvid/kombine-skills -g -a claude-code   # all skills, globally, for Claude Code
 npx skills update                                       # later
 ```
 

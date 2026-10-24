@@ -2,6 +2,8 @@
 
 Agent skills for [Kombine](https://kombine.dev), the minimalist Pomodoro + task app. They let Claude Code, Cursor, Codex and other agents read and manage your Kombine account through the [API](https://kombine.dev/docs/power-users/api/).
 
+Step-by-step guide, in five languages: **[kombine.dev/docs/power-users/ai-agents](https://kombine.dev/docs/power-users/ai-agents/)**.
+
 | Skill | What it does |
 |---|---|
 | `kombine` | Tasks, focus sessions, activities, goals, timer and stats: "what's due today?", "add a task", "log 45 min on the importer", "how's my streak?" |

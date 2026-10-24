@@ -1,0 +1,15 @@
+{
+  "name": "kombine",
+  "description": "Agent skills for Kombine, the Pomodoro + task app",
+  "owner": {
+    "name": "Adam Świderski",
+    "url": "https://kombine.dev"
+  },
+  "plugins": [
+    {
+      "name": "kombine",
+      "source": "./",
+      "description": "Read and manage your Kombine tasks, sessions, goals and stats through the API with a personal access token"
+    }
+  ]
+}

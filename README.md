@@ -37,7 +37,7 @@ npx skills update                                       # later
 
 ## Requirements
 
-`curl`, `jq` and `uuidgen`.
+Only `curl`, which macOS and Linux include. If `jq` is installed, the agent uses it to keep large responses short.
 
 ## License
 

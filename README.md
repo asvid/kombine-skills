@@ -5,7 +5,6 @@ Agent skills for [Kombine](https://kombine.dev), the minimalist Pomodoro + task 
 | Skill | What it does |
 |---|---|
 | `kombine` | Tasks, focus sessions, activities, goals, timer and stats: "what's due today?", "add a task", "log 45 min on the importer", "how's my streak?" |
-| `jira-to-kombine` | Imports your open Jira issues as Kombine tasks, skipping ones already imported |
 
 ## 1. Create a token
 
@@ -38,7 +37,7 @@ npx skills update                                       # later
 
 ## Requirements
 
-`curl` and `jq`. `jira-to-kombine` also needs `uuidgen` and Jira credentials (see its [SKILL.md](skills/jira-to-kombine/SKILL.md)).
+`curl`, `jq` and `uuidgen`.
 
 ## License
 

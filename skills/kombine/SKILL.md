@@ -49,7 +49,7 @@ GET is read; everything else needs write.
 ## Sessions, timer, stats
 
 - Log time done elsewhere: `POST /sessions` with your own `id`, `mode` (`POMODORO|FLOW|ADAPTIVE`), `started_at`, `ended_at`, `duration_ms`, optional `task_id`, `activity_id`, `note`.
-- Log entries (short notes on the user's Log timeline, e.g. "shipped the release"): `POST /log-entries` with `text`, `occurred_at` (ISO 8601, default now) and your own `id`. List with `GET /log-entries`, edit with `PUT /log-entries/{id}`, delete with `DELETE /log-entries/{id}`. Needs **sessions** permission.
+- Log entries (short notes on the user's Log timeline, e.g. "shipped the release"): `POST /log-entries` with `text` (required, max 10000 chars), `occurred_at` (required, ISO 8601; use the current time if the user gives none) and your own `id`. List with `GET /log-entries`, edit with `PUT /log-entries/{id}`, delete with `DELETE /log-entries/{id}`. Needs **sessions** permission.
 - Activities: `k "$API/activities"` (you need each `id` and `name`).
 - Running timer: `GET /timer/state` (`204` = nothing running). Don't start/stop the timer over the API: it leaves no session behind. Log a session instead.
 - Stats: `GET /stats/all-time` (`404` on a brand-new account), `GET /daily-snapshots?from=YYYY-MM-DD&to=YYYY-MM-DD`.

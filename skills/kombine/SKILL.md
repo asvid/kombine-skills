@@ -1,6 +1,6 @@
 ---
 name: kombine
-description: Read and manage the user's Kombine account (tasks, focus sessions, activities, goals, timer, stats) through the Kombine REST API with a personal access token. Use when the user asks about their Kombine tasks, what's due, adding or completing tasks, logging focus time, their pomodoro stats or streaks, goals, or what timer is running.
+description: Read and manage the user's Kombine account (tasks, focus sessions, log entries, activities, goals, timer, stats) through the Kombine REST API with a personal access token. Use when the user asks about their Kombine tasks, what's due, adding or completing tasks, logging focus time or a note to their Log, their pomodoro stats or streaks, goals, or what timer is running.
 ---
 
 # Kombine API
@@ -49,6 +49,7 @@ GET is read; everything else needs write.
 ## Sessions, timer, stats
 
 - Log time done elsewhere: `POST /sessions` with your own `id`, `mode` (`POMODORO|FLOW|ADAPTIVE`), `started_at`, `ended_at`, `duration_ms`, optional `task_id`, `activity_id`, `note`.
+- Log entries (short notes on the user's Log timeline, e.g. "shipped the release"): `POST /log-entries` with `text`, `occurred_at` (ISO 8601, default now) and your own `id`. List with `GET /log-entries`, edit with `PUT /log-entries/{id}`, delete with `DELETE /log-entries/{id}`. Needs **sessions** permission.
 - Activities: `k "$API/activities"` (you need each `id` and `name`).
 - Running timer: `GET /timer/state` (`204` = nothing running). Don't start/stop the timer over the API: it leaves no session behind. Log a session instead.
 - Stats: `GET /stats/all-time` (`404` on a brand-new account), `GET /daily-snapshots?from=YYYY-MM-DD&to=YYYY-MM-DD`.

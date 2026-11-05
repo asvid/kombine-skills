@@ -41,7 +41,7 @@ GET is read; everything else needs write.
 ## Tasks
 
 - List: `k "$API/tasks?limit=500"` → `{data, total, limit, offset}`. Page with `offset`. No server-side status/date filter, so filter the output yourself. `external_ref_prefix=` filters by import source.
-- Create: `POST /tasks`. **You** generate `id` with `uuid` (defined above); resending the same id can't duplicate. Fields: `title`, `priority` (`LOW|MEDIUM|HIGH`, omit for none), `status` (`TODO|IN_PROGRESS|DONE`), `due_date` (ISO 8601 instant), `due_date_has_time` (`false` = date only, never infer from midnight), `tags`, `activity_id`, `external_ref`.
+- Create: `POST /tasks`. **You** generate `id` with `uuid` (defined above); resending the same id can't duplicate. Fields: `title`, `priority` (`LOW|MEDIUM|HIGH`, omit for none), `status` (`TODO|IN_PROGRESS|DONE`), `due_date` (ISO 8601 instant), `due_date_has_time` (`false` = date only, never infer from midnight; for a date-only `due_date` send a time on the date you mean in the user's local zone, such as local midnight), `tags`, `activity_id`, `external_ref`.
 - Update: `PUT /tasks/{id}` sends only the changed fields. `{"status":"DONE"}` completes it (counts for stats, advances repeating tasks).
 - Delete: `DELETE /tasks/{id}`.
 - `external_ref` (`<source>:<id>`, e.g. `jira:ABC-1`) is unique per account: a duplicate gives `409` / `4010`. Use it as the dedup key when importing from other tools.
